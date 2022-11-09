@@ -74,15 +74,68 @@ novaPilha.print();
 //esvaziando pilha; (this.clear);
 novaPilha.clear();
 
-//informando se a pilha stá vazia ou não após esvaziar ela; (this.isEmpty);
+//informando se a pilha está vazia ou não após esvaziar ela; (this.isEmpty);
 console.log(novaPilha.isEmpty());
 
 //informando o tamanho da pilha após esvaziar ela; (this.size);
 console.log(novaPilha.size()); 
 
+// ANALISANDO GRAFICAMENTE AS PILHAS
+console.log(novaPilha.isEmpty())
+novaPilha.push(5)
+novaPilha.print()
+novaPilha.push(8)
+novaPilha.print()
+novaPilha.push(11)
+novaPilha.print()
+novaPilha.push(15)
+novaPilha.print()
 
+novaPilha.pop()
+novaPilha.print()
+novaPilha.pop()
+novaPilha.print()
+novaPilha.pop()
+novaPilha.print()
+novaPilha.pop()
+novaPilha.print()
+novaPilha.pop()
+novaPilha.print()
+console.log(novaPilha.isEmpty())
 
+//PRIMEIRO EXERCÍCIO
+console.log("PRIMEIRA ATIVIDADE");
+console.log("1- Conversor Binário");
 
+function dec2Bin(decNumber){
+    //declarando variáveis necessárias;
+    var restStack = [],
+    rest,
+    binaryString = ''
+
+    //Transformando numero em binário;
+    while(decNumber > 0){
+
+        rest = Math.floor(decNumber % 2);
+        restStack.push(rest);
+        decNumber = Math.floor(decNumber / 2);
+
+    }
+    
+    //Colocando o número binário em ordem; 
+    while(restStack.length > 0){
+
+        binaryString += restStack.pop().toString();
+
+        //p.s: a função .pop() tem a funcionalidade de retirar o elemento do topo da pilha, mas também retorna o valor retirado se necessário.
+
+    }
+
+    return binaryString;
+}
+
+console.log("25 = ", dec2Bin(25));
+console.log("23 = ", dec2Bin(23));
 
 
 
