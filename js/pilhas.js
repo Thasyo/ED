@@ -138,6 +138,38 @@ console.log("25 = ", dec2Bin(25));
 console.log("23 = ", dec2Bin(23));
 
 
+//SEGUNDO EXERCÍCIO
+console.log("-----------------------")
+console.log("SEGUNDA ATIVIDADE");
+console.log("2- Conversor de Base");
+
+function baseConverter(decNumber, base){
+
+    var restStack = [],
+    rest,
+    baseString = '',
+    digits = "0123456789ABCDEF" //São utilizadas quando convertemos em Hexadecimal;
+
+    while(decNumber > 0){
+
+        rest = Math.floor(decNumber % base);
+        restStack.push(rest);
+        decNumber = Math.floor(decNumber / base);
+
+    }
+
+    while(restStack.length > 0){
+
+        baseString += digits[restStack.pop()];
+
+    }
+
+    return baseString;
+}
+
+console.log(baseConverter(123, 16)); /* hexadecimal */
+console.log(baseConverter(123, 2)); /* binario */
+console.log(baseConverter(123, 8)); /* octal */
 
 
 
